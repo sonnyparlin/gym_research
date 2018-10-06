@@ -5,7 +5,7 @@ import pandas as pd
 
 # mapbox_access_token = 'ADD_YOUR_TOKEN_HERE'
 
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/Nuclear%20Waste%20Sites%20on%20American%20Campuses.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/sonnyparlin/gym_research/master/rkbjj_florida.csv')
 site_lat = df.lat
 site_lon = df.lon
 locations_name = df.text
@@ -17,40 +17,29 @@ data = [
         mode='markers',
         marker=dict(
             size=17,
-            color='rgb(255, 0, 0)',
+            color='rgb(0, 128, 0)',
             opacity=0.7
         ),
         text=locations_name,
         hoverinfo='text'
-    ),
-    go.Scattermapbox(
-        lat=site_lat,
-        lon=site_lon,
-        mode='markers',
-        marker=dict(
-            size=8,
-            color='rgb(242, 177, 172)',
-            opacity=0.7
-        ),
-        hoverinfo='none'
     )]
 
 layout = go.Layout(
-    title='Nuclear Waste Sites on Campus',
+    title='RKBJJ Gyms in Florida',
     autosize=True,
     hovermode='closest',
     showlegend=False,
     mapbox=dict(
         bearing=0,
         center=dict(
-            lat=38,
-            lon=-94
+            lat=28.025881,
+            lon=-81.732880
         ),
         pitch=0,
-        zoom=3,
+        zoom=8.3,
         style='light'
     ),
 )
 
 fig = dict(data=data, layout=layout)
-py.plot(fig, filename='Nuclear Waste Sites on American Campuses')
+py.plot(fig, filename='RKBJJ Schools')
