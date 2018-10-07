@@ -16,7 +16,8 @@ data = [
     go.Scattermapbox(
         lat=site_lat,
         lon=site_lon,
-        mode='markers',
+        mode='markers+text',
+        textposition='middle right',
         marker=dict(
             size=17,
             color='rgb(0, 128, 0)',
@@ -40,7 +41,7 @@ layout = go.Layout(
             lon=-82.234936
         ),
         pitch=20,
-        zoom=7.7,
+        zoom=8.5,
         style='light'
     ),
 )
