@@ -1,6 +1,6 @@
 import plotly.plotly as py
 import plotly.graph_objs as go
-
+import distance
 import pandas as pd
 
 # mapbox_access_token = 'ADD_YOUR_TOKEN_HERE'
@@ -9,6 +9,8 @@ df = pd.read_csv('https://raw.githubusercontent.com/sonnyparlin/gym_research/mas
 site_lat = df.lat
 site_lon = df.lon
 locations_name = df.text
+#locations_dist = distance.build_distance_tuples()
+
 
 data = [
     go.Scattermapbox(
@@ -26,17 +28,19 @@ data = [
 
 layout = go.Layout(
     title='RKBJJ Gyms in Florida',
-    autosize=True,
-    hovermode='closest',
+    autosize=False,
+    width=1000,
+    height=600,
     showlegend=False,
+    hovermode='closest',
     mapbox=dict(
         bearing=0,
         center=dict(
-            lat=28.025881,
-            lon=-81.732880
+            lat=27.849172,
+            lon=-82.234936
         ),
-        pitch=0,
-        zoom=8.3,
+        pitch=20,
+        zoom=7.7,
         style='light'
     ),
 )
