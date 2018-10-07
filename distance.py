@@ -29,13 +29,13 @@ def build_distance_tuples():
                 lon2=site_lon[x]
         
             dist = int(distance(lat1, lon1, lat2, lon2) / 1.609)
-            if (dist < 20) and (locations_name[x],locations_name[i], dist) not in final:
+            if (dist < 15) and (locations_name[x],locations_name[i], dist) not in final:
                 final.append((locations_name[i],locations_name[x], dist))
 
     final = list(set(final))
     final = sorted(final, key=lambda x: x[2])
     return final
     
-#final = build_distance_tuples()
-#for a, b, c in final:
-#    print("{} is {} miles from {}".format(a,c,b))      
+final = build_distance_tuples()
+for a, b, c in final:
+    print("{} is {} miles from {}".format(a,c,b))      
