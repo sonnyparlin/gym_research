@@ -9,11 +9,35 @@ df = pd.read_csv('https://raw.githubusercontent.com/sonnyparlin/gym_research/mas
 site_lat = df.lat
 site_lon = df.lon
 locations_name = df.text
-#locations_dist = distance.build_distance_tuples()
+dist = distance.build_distance_tuples()
+s=""
+for a, b, c in dist:
+    s += "<span name=\"dist\">{} is {} miles from {}</span><br/>".format(a,c,b)
+    
+file = open('distance.html', 'w')
+file.write("""
+<html>
+    <head>
+        <title>Gracie Tampa Gyms</title>
+    </head>
+    <body style='font: 11px arial, sans-serif;'>
+            <table>
+                <tr>
+                    <td>
+                <iframe width=\"900\" height=\"600\" frameborder=\"0\" scrolling=\"no\" src=\"http://plot.ly/~sonnyjitsu/36.embed\"></iframe>
+                    </td>
+                
+                    <td style='padding-left:20px;font: 12px arial, sans-serif;'>
+                    <div>{}</div>
+                    </td>
+                </tr>
+            </table>
+    
+    </body>
+    </html>""".format(s))
+file.close()
 
-
-data = [
-    go.Scattermapbox(
+trace = go.Scattermapbox(
         lat=site_lat,
         lon=site_lon,
         mode='markers+text',
@@ -25,7 +49,7 @@ data = [
         ),
         text=locations_name,
         hoverinfo='text'
-    )]
+    )
 
 layout = go.Layout(
     title='RKBJJ Gyms in Florida',
@@ -46,5 +70,6 @@ layout = go.Layout(
     ),
 )
 
+data = [trace]
 fig = dict(data=data, layout=layout)
 py.plot(fig, filename='RKBJJ Schools')
