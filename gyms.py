@@ -24,7 +24,7 @@ file.write("""
             <table>
                 <tr>
                     <td>
-                    <img src="RKBJJSchools.png" />
+                    <img src="https://raw.githubusercontent.com/sonnyparlin/gym_research/master/RKBJJSchools.png" />
                     </td>
                 
                     <td style='padding-left:20px;font: 12px arial, sans-serif;'>
