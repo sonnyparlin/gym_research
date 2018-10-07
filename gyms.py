@@ -14,7 +14,7 @@ s=""
 for a, b, c in dist:
     s += "<span name=\"dist\">{} is {} miles from {}</span><br/>".format(a,c,b)
     
-file = open('distance.html', 'w')
+file = open('index.html', 'w')
 file.write("""
 <html>
     <head>
