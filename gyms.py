@@ -24,7 +24,8 @@ file.write("""
             <table>
                 <tr>
                     <td>
-                    <img src="https://raw.githubusercontent.com/sonnyparlin/gym_research/master/RKBJJSchools.png" />
+                    <a href="https://plot.ly/~sonnyjitsu/36/rkbjj-gyms-in-florida/#/">
+                    <img src="https://raw.githubusercontent.com/sonnyparlin/gym_research/master/RKBJJSchools.png" /></a>
                     </td>
                 
                     <td style='padding-left:20px;font: 12px arial, sans-serif;'>
