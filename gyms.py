@@ -24,7 +24,7 @@ file.write("""
             <table>
                 <tr>
                     <td>
-                <iframe width=\"900\" height=\"600\" frameborder=\"0\" scrolling=\"no\" src=\"http://plot.ly/~sonnyjitsu/36.embed\"></iframe>
+                    <img src="RKBJJSchools.png" />
                     </td>
                 
                     <td style='padding-left:20px;font: 12px arial, sans-serif;'>
