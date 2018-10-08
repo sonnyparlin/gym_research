@@ -9,6 +9,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/sonnyparlin/gym_research/mas
 site_lat = df.lat
 site_lon = df.lon
 locations_name = df.text
+dist = distance.build_distance_tuples(True)
     
 trace = go.Scattermapbox(
         lat=site_lat,
@@ -28,7 +29,7 @@ layout = go.Layout(
     title='RKBJJ Gyms in Florida',
     autosize=False,
     width=1000,
-    height=600,
+    height=700,
     showlegend=False,
     hovermode='closest',
     mapbox=dict(

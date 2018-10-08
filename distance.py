@@ -8,7 +8,7 @@ def distance(lat1, lon1, lat2, lon2):
     return 12742 * asin(sqrt(a))
 
 
-def build_distance_tuples():
+def build_distance_tuples(p=False):
     df = pd.read_csv('https://raw.githubusercontent.com/sonnyparlin/gym_research/master/rkbjj_florida.csv')
     site_lat = df.lat
     site_lon = df.lon
@@ -34,6 +34,9 @@ def build_distance_tuples():
 
     final = list(set(final))
     final = sorted(final, key=lambda x: x[2])
+    if p:
+        for a, b, c in final:
+           print("{} is {} miles from {}".format(a,c,b))
     return final
     
-final = build_distance_tuples()
+#final = build_distance_tuples()
