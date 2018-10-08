@@ -4,6 +4,7 @@ import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
 import distance
+import plotly.plotly as py
 
 app = dash.Dash()
 
@@ -25,6 +26,18 @@ app.layout = html.Div([
                 'size': 8,
                 'opacity': 0.6
             },
+            'selected': {
+                "marker": {
+                    "color": "red",
+                    'size':12
+                }
+            },
+            'unselected': {
+                "marker": {
+                    'color': 'rgb(0, 128, 0)',
+                    'size': 8,
+                }
+            },
             'text': df['gyms'],
             'type': 'scattermapbox'
         }],
@@ -40,6 +53,7 @@ app.layout = html.Div([
                 'zoom':8.5,
                 'style':'light'
             },
+            'clickmode': 'select+event',
             'hovermode': 'closest',
             'margin': {'l': 0, 'r': 0, 'b': 0, 't': 0}
         }
@@ -50,7 +64,6 @@ app.layout = html.Div([
     dash.dependencies.Output('text-content', 'children'),
     [dash.dependencies.Input('map', 'selectedData')])
 def update_text(selectedData):
-    print(selectedData)
     s=""
     di = ""
     try:
@@ -59,16 +72,15 @@ def update_text(selectedData):
         lat2 = selectedData['points'][1]['lat']
         lon2 = selectedData['points'][1]['lon']
         di = distance.distance(lat1, lon1, lat2, lon2)
-    except TypeError:
+    except (TypeError, IndexError) as e:
         pass
-    comp=""
     
     try:
         return html.H3(
             '{} is {:.1f} miles away from {}'.format(selectedData['points'][0]['text'], di, selectedData['points'][1]['text'])
         )
-    except TypeError:
-        return html.H3("Select two points on the map wth the selection tool to see the distance.")
+    except (TypeError, IndexError) as e:
+        return html.H3("Select two points on the map with the selection tool to see the distance.")
 
 app.css.append_css({
     'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'
