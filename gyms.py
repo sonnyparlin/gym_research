@@ -9,35 +9,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/sonnyparlin/gym_research/mas
 site_lat = df.lat
 site_lon = df.lon
 locations_name = df.text
-dist = distance.build_distance_tuples()
-s=""
-for a, b, c in dist:
-    s += "<span name=\"dist\">{} is {} miles from {}</span><br/>".format(a,c,b)
     
-file = open('index.html', 'w')
-file.write("""
-<html>
-    <head>
-        <title>Gracie Tampa Gyms</title>
-    </head>
-    <body style='font: 11px arial, sans-serif;'>
-            <table>
-                <tr>
-                    <td>
-                    <a href="https://plot.ly/~sonnyjitsu/36/rkbjj-gyms-in-florida/#/">
-                    <img src="https://raw.githubusercontent.com/sonnyparlin/gym_research/master/RKBJJSchools.png" /></a>
-                    </td>
-                
-                    <td style='padding-left:20px;font: 12px arial, sans-serif;'>
-                    <div>{}</div>
-                    </td>
-                </tr>
-            </table>
-    
-    </body>
-    </html>""".format(s))
-file.close()
-
 trace = go.Scattermapbox(
         lat=site_lat,
         lon=site_lon,
