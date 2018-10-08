@@ -44,7 +44,7 @@ app.layout = html.Div([
             'margin': {'l': 0, 'r': 0, 'b': 0, 't': 0}
         }
     })
-])
+], style={'marginLeft': 50, 'marginRight': 50, 'marginTop':20})
 
 @app.callback(
     dash.dependencies.Output('text-content', 'children'),
@@ -68,7 +68,7 @@ def update_text(selectedData):
             '{} is {:.1f} miles away from {}'.format(selectedData['points'][0]['text'], di, selectedData['points'][1]['text'])
         )
     except TypeError:
-        pass
+        return html.H3("Select two points on the map wth the selection tool to see the distance.")
 
 app.css.append_css({
     'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'
