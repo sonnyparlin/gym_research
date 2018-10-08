@@ -43,7 +43,7 @@ app.layout = html.Div([
         }],
         'layout': {
             'mapbox': {
-                'accesstoken': 'pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2ozcGI1MTZ3MDBpcTJ3cXR4b3owdDQwaCJ9.8jpMunbKjdq1anXwU5gxIw',
+                'accesstoken': 'pk.eyJ1Ijoic29ubnlqaXRzdSIsImEiOiJjam14bTFta3QwYXhyM3FtOWZqazZpNGJxIn0.omNsN52xtBl4_zHjSEHDVw',
                 'bearing':0,
                 'center'  : {
                         'lat':'27.849172',
