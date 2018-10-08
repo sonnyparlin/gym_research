@@ -63,9 +63,12 @@ def update_text(selectedData):
         pass
     comp=""
     
-    return html.H3(
-        '{} is {:.1f} miles away from {}'.format(selectedData['points'][0]['text'], di, selectedData['points'][1]['text'])
-    )
+    try:
+        return html.H3(
+            '{} is {:.1f} miles away from {}'.format(selectedData['points'][0]['text'], di, selectedData['points'][1]['text'])
+        )
+    except TypeError:
+        pass
 
 app.css.append_css({
     'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'
