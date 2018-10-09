@@ -11,6 +11,7 @@ app.layout = html.Div([
     html.Div(id='page-content')
 ])
 
+app.title="BJJ Map"
 
 @app.callback(
     Output('page-content', 'children'), 
