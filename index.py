@@ -3,12 +3,13 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 from app import app
+from app import server
 from apps import bjjmap, app2
 
 
-app.layout = html.Div([
+app.layout = html.Div([ 
     dcc.Location(id='url', refresh=False),
-    html.Div(id='page-content')
+    html.Div(id='page-content') 
 ])
 
 app.title="BJJ Map"
