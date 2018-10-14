@@ -28,8 +28,6 @@ app.title="BJJ Map"
 def display_page(pathname):
     if pathname == '/apps/bjjmap':
          return bjjmap.layout
-    elif pathname == '/apps/app2':
-         return app2.layout
     else:
         return bjjmap.layout # return '404'
 
