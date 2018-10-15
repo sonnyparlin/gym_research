@@ -13,6 +13,7 @@ def distance(lat1, lon1, lat2, lon2):
     return geopy.distance.vincenty(coords_1, coords_2).miles
     
 app = dash.Dash()
+server = app.server
 
 df = pd.read_csv('https://raw.githubusercontent.com/sonnyparlin/gym_research/master/rkbjj_florida.csv')
     
