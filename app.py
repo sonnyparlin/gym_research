@@ -12,7 +12,14 @@ def distance(lat1, lon1, lat2, lon2):
 
     return geopy.distance.vincenty(coords_1, coords_2).miles
     
-app = dash.Dash()
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+    
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets, 
+    meta_tags=[
+    {
+        'name': 'description',
+        'content': 'App that shows the RKBJJ network gyms'
+    }])
 server = app.server
 
 df = pd.read_csv('https://raw.githubusercontent.com/sonnyparlin/gym_research/master/rkbjj_florida.csv')
@@ -66,6 +73,8 @@ app.layout = html.Div([
         }
     })
 ], style={'marginLeft': 50, 'marginRight': 50, 'marginTop':20})
+
+app.title="RKBJJ Map"
 
 @app.callback(
     dash.dependencies.Output('text-content', 'children'),
