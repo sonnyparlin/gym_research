@@ -1,2 +1,2 @@
 # gym_research
-python index.py
+python app.py
