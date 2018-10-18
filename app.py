@@ -93,7 +93,7 @@ def update_text(selectedData):
     
     try:
         return html.H3(
-            '{} is within a {:.1f} radius from {}'.format(selectedData['points'][0]['text'], di, selectedData['points'][1]['text'])
+            '{} is within a {:.1f} mile radius from {}'.format(selectedData['points'][0]['text'], di, selectedData['points'][1]['text'])
         )
     except (TypeError, IndexError) as e:
         return html.H3("Select two points on the map with the selection tool to see the distance.")
