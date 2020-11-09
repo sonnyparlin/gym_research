@@ -1,9 +1,9 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import plotly.graph_objs as go
 import pandas as pd
-import plotly.plotly as py
+import chart_studio.plotly as py
+import plotly.graph_objs as go
 import geopy.distance
 
 def distance(lat1, lon1, lat2, lon2):
