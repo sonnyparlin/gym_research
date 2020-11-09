@@ -10,11 +10,11 @@ def distance(lat1, lon1, lat2, lon2):
     coords_1 = (lat1, lon1)
     coords_2 = (lat2, lon2)
 
-    return geopy.distance.vincenty(coords_1, coords_2).miles
-    
+    return geopy.distance.geodesic(coords_1, coords_2).miles
+
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-    
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets, 
+
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
     meta_tags=[
     {
         'name': 'description',
@@ -23,7 +23,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
 server = app.server
 
 df = pd.read_csv('https://raw.githubusercontent.com/sonnyparlin/gym_research/master/rkbjj_florida.csv')
-    
+
 #print(dist_hash)
 
 app.layout = html.Div([
@@ -90,7 +90,7 @@ def update_text(selectedData):
         di = distance(lat1, lon1, lat2, lon2)
     except (TypeError, IndexError) as e:
         pass
-    
+
     try:
         return html.H3(
             '{} is within a {:.1f} mile radius from {}'.format(selectedData['points'][0]['text'], di, selectedData['points'][1]['text'])
