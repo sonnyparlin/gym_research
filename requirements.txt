@@ -7,14 +7,6 @@ Beaker==1.10.0
 beautifulsoup4==4.9.3
 chardet==3.0.4
 chart-studio==1.1.0
-chrome-gnome-shell==0.0.0
-click==7.1.2
-colorlover==0.3.0
-cryptography==3.0
-cufflinks==0.17.3
-cupshelpers==1.0
-Cython==0.29.21
-dasbus==1.4
 dash==1.17.0
 dash-core-components==1.13.0
 dash-html-components==1.1.1
