@@ -29,7 +29,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/sonnyparlin/gym_research/mas
 app.layout = html.Div([
     html.H1('RKBJJ Gyms'),
     html.Div(id='text-content'),
-    dcc.Graph(id='map', figure={
+    dcc.Graph(id='map', figure={ 
         'data': [{
             'lat': df['lat'],
             'lon': df['lon'],
