@@ -19,11 +19,7 @@ distro==1.5.0
 entrypoints==0.3
 Flask==1.1.2
 Flask-Compress==1.8.0
-fros==1.1
-future==0.18.2
-geographiclib==1.50
 geopy==2.0.0
-gpg==1.14.0
 humanize==0.5.1
 idna==2.10
 MarkupSafe==1.1.1
